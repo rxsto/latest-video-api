@@ -1,0 +1,28 @@
+name = "latest-video-api"
+type = "javascript"
+
+account_id = "1a18e2f050c584e226f3ef8f81db4f56"
+
+workers_dev = true
+compatibility_date = "2022-05-08"
+
+[vars]
+ORIGIN_URL = "http://localhost:3000"
+
+[env.production]
+name = "production"
+
+[env.production.vars]
+YOUTUBE_API_KEY = "value"
+ORIGIN_URL = "value"
+
+[[kv_namespaces]]
+binding = "VIDEO_CACHE"
+id = "a0ce79240e634be2bf9b1e47101750cd"
+preview_id = "e5b600307aaa4c9f919c4d4d3b530876"
+
+[build]
+command = "pnpm i && pnpm run build"
+
+[build.upload]
+format = "service-worker"
